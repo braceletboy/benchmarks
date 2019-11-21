@@ -91,9 +91,13 @@ if [ "$?" != "0" ]; then
   echo "Error installing R!";
   exit 1;
 fi
-
 ./dtimeout_install.sh $1
 if [ "$?" != "0" ]; then
-  echo "Error installing R!";
+  echo "Error installing dtimeout!";
+  exit 1;
+fi
+./mprofiler_install.sh $1
+if [ "$?" != "0" ]; then
+  echo "Error installing mprofiler!";
   exit 1;
 fi
